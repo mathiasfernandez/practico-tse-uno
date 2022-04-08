@@ -25,7 +25,9 @@
     </form>
 </div>
 
-<a class="btn" href="/presentacion/index.jsp">Volver</a>
+<form method="get" action="/presentacion/index.jsp">
+    <button type="submit">Volver</button>
+</form>
 
 </body>
 </html>
