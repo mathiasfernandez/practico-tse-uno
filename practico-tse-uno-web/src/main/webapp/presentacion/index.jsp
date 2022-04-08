@@ -27,7 +27,7 @@
             <div class="card-body">
                 <h5 class="card-title">Listar Usuario</h5>
                 <p class="card-text">Panel de listado de usuarios</p>
-                <a href="#" class="btn btn-primary">Listar</a>
+                <a href="/ListarUsuariosServerlet" class="btn btn-primary">Listar</a>
             </div>
         </div>
     </div>

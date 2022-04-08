@@ -1,6 +1,7 @@
 package org.example.serverlets;
 import org.example.usuarios.Usuario;
 import org.example.usuarios.UsuariosEJBLocal;
+import org.jetbrains.annotations.NotNull;
 
 import javax.ejb.EJB;
 import javax.servlet.*;
@@ -15,17 +16,11 @@ public class ListarUsuariosServerlet extends HttpServlet {
     private UsuariosEJBLocal usuariosBean;
     
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String nombre = request.getParameter("nombre");
+    protected void doGet(@NotNull HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Usuario> usuarios;
-        if (nombre == null) {
-            usuarios = usuariosBean.getUsuario();
-        } else {
-            usuarios = usuariosBean.getUsuarioByName(nombre);
-        }
+        usuarios = usuariosBean.getUsuario();
         request.setAttribute("usuarios", usuarios);
-        request.setAttribute("nombre", nombre);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("../webapp/presentacion/listarUsuario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/presentacion/listarUsuario.jsp");
         dispatcher.forward(request, response);
     }
 

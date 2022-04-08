@@ -11,7 +11,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     List<Usuario> usuarios = (List<Usuario>) request.getAttribute("usuarios");
-    String nombre = (String) request.getAttribute("nombre");
 %>
 <%!
     private String getDateString(LocalDate date) {
@@ -20,27 +19,10 @@
 %>
 <html>
 <head>
-    <style>
-        table {
-            border-collapse: collapse;
-        }
-        thead {
-            background: #163759;
-            color: white;
-        }
-        table th {
-            padding: 10px;
-        }
-    </style>
-    <link rel="stylesheet" href="/styles/main.css">
     <title>Iniciativas - Listar</title>
 </head>
 <body>
 <h3>Listado de Iniciativas</h3>
-<form action="/ListarUsuariosServerlet" method="get">
-    <input type="text" name="nombre" value="<%=(nombre != null) ? nombre : ""%>" placeholder="Buscar por nombre">
-    <input type="submit" value="Buscar">
-</form>
 <table style="border-collapse: collapse;">
     <thead style="background: #163759; color: white;">
     <tr>
@@ -51,13 +33,18 @@
     </tr>
     </thead>
     <tbody>
-    <tr><% for (Usuario i: usuarios) { %>
+    <tr><%
+    if(usuarios != null){
+        for (Usuario i: usuarios) { %>
         <th><%=i.getId()%></th>
         <th><%=i.getNombre()%></th>
         <th><%=i.getApellido()%></th>
         <th><%=getDateString(i.getFechaNacimiento())%></th>
-    </tr><% } %>
+    </tr><% } }%>
     </tbody>
 </table>
+<form method="get" action="/presentacion/index.jsp">
+    <button type="submit">Volver</button>
+</form>
 </body>
 </html>

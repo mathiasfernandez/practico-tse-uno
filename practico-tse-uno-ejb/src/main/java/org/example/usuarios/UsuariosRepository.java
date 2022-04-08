@@ -29,9 +29,9 @@ public class UsuariosRepository {
         return usuarios.stream().filter((i) -> i.getNombre().toLowerCase().contains(name.toLowerCase())).collect(Collectors.toList());
     }
 
-//    @PostConstruct
-//    public void initialize() {
-//        iniciativas.add(new Iniciativa(1, "Plaza", "Cortar el pasto de la plaza", "Pepe", LocalDate.now()));
-//        iniciativas.add(new Iniciativa(2, "Murales escuela", "Pintar los murales de la escuela...", "Anónimo", LocalDate.now().minusDays(2)));
-//    }
+  @PostConstruct
+   public void initialize() {
+        usuarios.add(new Usuario(1, "Mathias", "Fernandez", LocalDate.now()));
+        usuarios.add(new Usuario(2, "Mathias2", "Fernandez2", LocalDate.now()));
+  }
 }
