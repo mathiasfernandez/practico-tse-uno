@@ -25,7 +25,7 @@ public class ListarUsuariosServerlet extends HttpServlet {
         }
         request.setAttribute("usuarios", usuarios);
         request.setAttribute("nombre", nombre);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/presentacion/listarUsuario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("../webapp/presentacion/listarUsuario.jsp");
         dispatcher.forward(request, response);
     }
 
