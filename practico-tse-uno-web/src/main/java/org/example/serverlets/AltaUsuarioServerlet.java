@@ -28,6 +28,6 @@ public class AltaUsuarioServerlet extends HttpServlet {
 
         Usuario usuario = new Usuario(id, nombre, apellido, fechaDeNacimiento);
         usuariosBean.addUsuario(usuario);
-        response.sendRedirect("../webapp/presentacion/index.jsp");
+        response.sendRedirect("/presentacion/index.jsp");
     }
 }
