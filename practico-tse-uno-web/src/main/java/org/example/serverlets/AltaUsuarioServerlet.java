@@ -25,7 +25,6 @@ public class AltaUsuarioServerlet extends HttpServlet {
         String nombre = request.getParameter("nombre");
         String apellido = request.getParameter("apellido");
         LocalDate fechaDeNacimiento = LocalDate.parse(request.getParameter("fecha"));
-
         Usuario usuario = new Usuario(id, nombre, apellido, fechaDeNacimiento);
         usuariosBean.addUsuario(usuario);
         response.sendRedirect("/presentacion/index.jsp");

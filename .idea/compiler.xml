@@ -8,8 +8,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="practico-tse-uno-web" />
         <module name="practico-tse-uno-ejb" />
+        <module name="tse-client-uno" />
         <module name="practico-tse-uno-ear" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="tse-cliente" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

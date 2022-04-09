@@ -5,7 +5,7 @@ import javax.ejb.Stateless;
 import java.util.List;
 
 @Stateless
-public class UsuariosEJB implements UsuariosEJBLocal {
+public class UsuariosEJB implements  UsuariosEJBRemote,UsuariosEJBLocal{
     @EJB
     private UsuariosRepository repository;
 
@@ -21,6 +21,11 @@ public class UsuariosEJB implements UsuariosEJBLocal {
 
     @Override
     public void addUsuario(Usuario usuario) {
-        repository.addUsuario(usuario);
+        List<Usuario> usuarios = repository.getUsuario();
+        for (Usuario i : usuarios) {
+            if (i.getId() == usuario.getId()) {
+                repository.addUsuario(usuario);
+            }
+        }
     }
 }

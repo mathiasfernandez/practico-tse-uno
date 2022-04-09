@@ -30,6 +30,8 @@
         <module>practico-tse-uno-ejb</module>
         <module>practico-tse-uno-web</module>
         <module>practico-tse-uno-ear</module>
+        <module>tse-cliente</module>
+        <module>tse-client-uno</module>
     </modules>
 
     <properties>
